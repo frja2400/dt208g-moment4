@@ -1,7 +1,21 @@
-<h2>Kurser</h2>
-
-<article *ngFor="let course of courses">
-    <h2>{{ course.code }}</h2>
-    <p>{{ course.coursename }}</p>
-    <p>{{ course.progression }}</p>
-</article>
+<div *ngFor="let course of courses">
+    <h2>Webbutveckling - Ramschema</h2>
+    <label for="search">Sök:</label>
+    <input type="text" id="search" name="search" placeholder="Sök efter kurskod eller kursnamn">
+    <table>
+        <thead>
+            <tr>
+                <th>Kurskod</th>
+                <th>Namn</th>
+                <th>Progression</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ course.code }}</td>
+                <td>{{ course.coursename }}</td>
+                <td>{{ course.progression }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
