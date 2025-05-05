@@ -1,1 +1,7 @@
-<p>home works!</p>
+<h2>Kurser</h2>
+
+<article *ngFor="let course of courses">
+    <h2>{{ course.code }}</h2>
+    <p>{{ course.coursename }}</p>
+    <p>{{ course.progression }}</p>
+</article>
