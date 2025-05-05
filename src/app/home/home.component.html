@@ -1,21 +1,23 @@
-<div *ngFor="let course of courses">
-    <h2>Webbutveckling - Ramschema</h2>
-    <label for="search">Sök:</label>
-    <input type="text" id="search" name="search" placeholder="Sök efter kurskod eller kursnamn">
-    <table>
-        <thead>
-            <tr>
-                <th>Kurskod</th>
-                <th>Namn</th>
-                <th>Progression</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ course.code }}</td>
-                <td>{{ course.coursename }}</td>
-                <td>{{ course.progression }}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<main>
+    <div class="course-container">
+        <h2>Webbutveckling - Ramschema</h2>
+        <label for="search">Sök:</label><br>
+        <input type="text" id="search" name="search" placeholder="Sök efter kurskod eller kursnamn">
+        <table>
+            <thead>
+                <tr>
+                    <th>Kurskod</th>
+                    <th>Namn</th>
+                    <th>Progression</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let course of courses" >
+                    <td>{{ course.code }}</td>
+                    <td>{{ course.coursename }}</td>
+                    <td>{{ course.progression }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
