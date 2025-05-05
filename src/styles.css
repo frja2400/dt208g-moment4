@@ -14,9 +14,8 @@ main {
     padding: 2%;
 }
 
-.info {
-    margin-left: auto;
-    margin-right: auto;
+.course-container {
+    width: 800px;
 }
 
 input {

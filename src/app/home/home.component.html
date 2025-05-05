@@ -1,8 +1,8 @@
 <main>
     <div class="course-container">
         <h2>Webbutveckling - Ramschema</h2>
-        <label for="search">Sök:</label><br>
-        <input type="text" id="search" name="search" placeholder="Sök efter kurskod eller kursnamn">
+        <label for="filter">Filtrera:</label><br>
+        <input type="text" id="filter" placeholder="Filtrera på kurskod eller kursnamn" [(ngModel)]="filterValue" (input)="applyFilter()"> <!--Tvåvägs data-bindning-->
         <table>
             <thead>
                 <tr>
@@ -12,7 +12,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let course of courses" >
+                <tr *ngFor="let course of filteredCourses" > <!--Visa filtrerade kurser-->
                     <td>{{ course.code }}</td>
                     <td>{{ course.coursename }}</td>
                     <td>{{ course.progression }}</td>
