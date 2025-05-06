@@ -3,12 +3,19 @@
         <h2>Webbutveckling - Ramschema</h2>
         <label for="filter">Filtrera:</label><br>
         <input type="text" id="filter" placeholder="Filtrera på kurskod eller kursnamn" [(ngModel)]="filterValue" (input)="applyFilter()"> <!--Tvåvägs data-bindning-->
+        
+        <!--Förbättrar användarupplevelsen med att skriva ut ett meddelande om inga kurser hittas.-->
+        @if(filteredCourses.length === 0) {
+            <p>Inga kurser hittades...</p>
+        }
+        
         <table>
             <thead>
                 <tr>
-                    <th>Kurskod</th>
-                    <th>Namn</th>
-                    <th>Progression</th>
+                    <!--Adderar klickfunktion och anropar funktion som sorterar varje kolumn.-->
+                    <th (click)="sortCode()">Kurskod</th>
+                    <th (click)="sortName()">Namn</th>
+                    <th (click)="sortProgression()">Progression</th>
                 </tr>
             </thead>
             <tbody>

@@ -36,4 +36,41 @@ export class HomeComponent {
       course.coursename.toLowerCase().includes(this.filterValue.toLowerCase())
     );
   }
+
+  //Metoder för sortering
+  //Sorteringsriktning med boolean. True = stigande ordning. Används för att kunna växla mellan stigande och fallande.
+  sortDirection = {
+    code: true,
+    coursename: true,
+    progression: true
+  }
+
+  sortCode(): void {
+    //Hämtar aktuell sortering (true)
+    const direction = this.sortDirection.code;
+    //Sortera filtrerade kurser utifrån code-kolumnen.
+    this.filteredCourses.sort((a, b) =>
+      //Använder localCompare för att jämföra strängar och ta hänsyn till språk.
+      //En ternär operation väljer stigande eller fallande beroende på om cirection är true eller false.
+      direction ? a.code.localeCompare(b.code) : b.code.localeCompare(a.code)
+    );
+    //Byter riktning för nästa gång man klickar.
+    this.sortDirection.code = !direction;
+  }
+
+  sortName(): void {
+    const direction = this.sortDirection.coursename;
+    this.filteredCourses.sort((a ,b) => 
+      direction ? a.coursename.localeCompare(b.coursename) : b.coursename.localeCompare(a.coursename)
+    );
+    this.sortDirection.coursename = !direction;
+  }
+
+  sortProgression(): void {
+    const direction = this.sortDirection.progression;
+    this.filteredCourses.sort((a ,b) => 
+      direction ? a.progression.localeCompare(b.progression) : b.progression.localeCompare(a.progression)
+    );
+    this.sortDirection.progression = !direction;
+  }
 }
