@@ -51,7 +51,7 @@ export class HomeComponent {
     //Sortera filtrerade kurser utifrån code-kolumnen.
     this.filteredCourses.sort((a, b) =>
       //Använder localCompare för att jämföra strängar och ta hänsyn till språk.
-      //En ternär operation väljer stigande eller fallande beroende på om cirection är true eller false.
+      //En ternär operator väljer stigande eller fallande beroende på om cirection är true eller false.
       direction ? a.code.localeCompare(b.code) : b.code.localeCompare(a.code)
     );
     //Byter riktning för nästa gång man klickar.
