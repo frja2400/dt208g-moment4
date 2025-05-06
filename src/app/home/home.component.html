@@ -1,30 +1,33 @@
-<main>
-    <div class="course-container">
-        <h2>Webbutveckling - Ramschema</h2>
-        <label for="filter">Filtrera:</label><br>
-        <input type="text" id="filter" placeholder="Filtrera på kurskod eller kursnamn" [(ngModel)]="filterValue" (input)="applyFilter()"> <!--Tvåvägs data-bindning-->
-        
-        <!--Förbättrar användarupplevelsen med att skriva ut ett meddelande om inga kurser hittas.-->
-        @if(filteredCourses.length === 0) {
-            <p>Inga kurser hittades...</p>
-        }
-        
-        <table>
-            <thead>
-                <tr>
-                    <!--Adderar klickfunktion och anropar funktion som sorterar varje kolumn.-->
-                    <th (click)="sortCode()">Kurskod</th>
-                    <th (click)="sortName()">Namn</th>
-                    <th (click)="sortProgression()">Progression</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let course of filteredCourses" > <!--Visa filtrerade kurser-->
-                    <td>{{ course.code }}</td>
-                    <td>{{ course.coursename }}</td>
-                    <td>{{ course.progression }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</main>
+<header>
+    <h1>Moment 4 - DT208G</h1>
+    <p class="header">Av Frida Jansson</p>
+</header>
+<div class="course-container">
+    <h2>Webbutveckling - Ramschema</h2>
+    <label for="filter">Filtrera:</label><br>
+    <input type="text" id="filter" placeholder="Filtrera på kurskod eller kursnamn" [(ngModel)]="filterValue"
+        (input)="applyFilter()"> <!--Tvåvägs data-bindning-->
+
+    <!--Förbättrar användarupplevelsen med att skriva ut ett meddelande om inga kurser hittas.-->
+    @if(filteredCourses.length === 0) {
+    <p>Inga kurser hittades...</p>
+    }
+
+    <table>
+        <thead>
+            <tr>
+                <!--Adderar klickfunktion och anropar funktion som sorterar varje kolumn.-->
+                <th (click)="sortCode()">Kurskod</th>
+                <th (click)="sortName()">Namn</th>
+                <th (click)="sortProgression()">Progression</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of filteredCourses"> <!--Visa filtrerade kurser-->
+                <td>{{ course.code }}</td>
+                <td>{{ course.coursename }}</td>
+                <td>{{ course.progression }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

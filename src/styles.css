@@ -9,18 +9,17 @@ body {
     overflow-x: hidden;
 }
 
-main {
-    flex: 1;
-    padding: 2%;
-}
-
 .course-container {
     width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    padding: 40px;
+    border-radius: 50px;
 }
 
 input {
     width: 300px;
     margin-bottom: 20px;
+    margin-top: 5px;
 }
 
 table {
@@ -36,4 +35,38 @@ table td {
 table th {
     text-decoration: underline;
     cursor: pointer;
+}
+
+h1, .header {
+    text-align: center;
+    background: linear-gradient(135deg, #dd0031, #c2185b, #512da8);
+    background-clip: text;
+    color: transparent;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+@media screen and (max-width : 1000px) {
+    .course-container {
+        width: 80%;
+        box-shadow: none;
+        padding-top: 10px;
+        border-top: 1px solid lightgrey;
+        border-radius: 0;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+    }
 }
